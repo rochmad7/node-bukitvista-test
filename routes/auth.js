@@ -1,6 +1,7 @@
 const { body } = require('express-validator');
 const router = require('express').Router();
-const { createRegister, login } = require('../controllers/auth');
+const { register, login } = require('../controllers/auth');
+const { validate } = require('../middlewares/validation');
 
 const authValidation = [
     body('name').notEmpty().withMessage('Name is required'),
@@ -11,7 +12,7 @@ const authValidation = [
         .withMessage('Password is required'),
 ];
 
-router.post('/register', authValidation, createRegister);
-router.post('/login', authValidation, login);
+router.post('/register', authValidation, validate, register);
+router.post('/login', authValidation, validate, login);
 
 module.exports = router;
