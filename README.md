@@ -7,8 +7,9 @@ poster.
 
 1. After clone this repo run `npm install`
 2. Configure your database in config/config.js
-3. Run `npm run setup-dev` to migrate database
-4. Run `npm start` to start server
+3. Rename .env.example to .env
+4. Run `npm run setup-dev` to migrate database
+5. Run `npm start` to start server
 
 ## API Documentation
 
